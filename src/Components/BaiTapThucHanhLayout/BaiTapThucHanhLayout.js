@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import HeaderComponent from './HeaderComponent'
-import BannerComponent from './BannerComponent'
-import ItemComponent from './ItemComponent'
+import BodyComponent from './BodyComponent'
 import FooterComponent from './FooterComponent'
 
 export default class BaiTapThucHanhLayout extends Component {
@@ -9,8 +8,7 @@ export default class BaiTapThucHanhLayout extends Component {
         return (
             <div>
                 <HeaderComponent />
-                <BannerComponent />
-                <ItemComponent />
+                <BodyComponent/>
                 <FooterComponent/>
             </div>
         )

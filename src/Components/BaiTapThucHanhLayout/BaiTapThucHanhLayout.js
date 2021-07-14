@@ -4,7 +4,7 @@ import BodyComponent from './BodyComponent'
 import FooterComponent from './FooterComponent'
 
 export default class BaiTapThucHanhLayout extends Component {
-    render() {
+    render() { // Trong component đã định nghĩa phương thức render, cách viết này là đang override lại
         return (
             <div>
                 <HeaderComponent />

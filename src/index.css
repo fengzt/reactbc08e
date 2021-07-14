@@ -29,7 +29,7 @@
   text-align: center;
 } */
 
-.container {
+/* .container {
   max-width: 1320px;
 }
 
@@ -41,4 +41,8 @@
   width: 4rem;
   font-size: 2rem;
   border-radius: 0.3rem;
+} */
+
+p{
+  color: red;
 }

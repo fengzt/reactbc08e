@@ -39,7 +39,7 @@ export default class StateDemo extends Component {
     );
   };
 
-  handleLogin = () => {
+  handleLogin = async () => {
     // this.state.isLogin = true; => không được gán giá trị trực tiếp, sẽ phải thông qua phương thức setState
     /*
         this.setState(newState):
@@ -49,19 +49,34 @@ export default class StateDemo extends Component {
             + clg vẫn ra giá trị cũ của state
     */
 
-    let newState = {
-      isLogin: true,
-    };
+    //C1
+    // let newState = {
+    //   isLogin: true,
+    // };
     // () => {
     //   console.log(this.state.isLogin);
     // };
 
     // Thay đổi giá trị state và render lại giao điện
-    // await this.setState({
-    //   isLogin: true
-    // });
+    // C2a gán giá trị mới của state sau khi render, nhờ async - await
+    await this.setState({
+      isLogin: true,
+    });
 
-    this.setState(newState);
+    console.log(this.state.isLogin);
+
+    // this.setState(newState);
+
+    //C2 set lại giá trị của state để thực hiện render
+    //C1a : gán giá trị mới của state sau khi render, nhờ tham số callback của setState
+    // this.setState(
+    //   {
+    //     isLogin: true,
+    //   },
+    //   () => {
+    //     console.log(this.state.isLogin);
+    //   }
+    // );
   };
 
   handleChangeColor = (color) => {

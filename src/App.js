@@ -6,8 +6,9 @@
 // import Demo from "./Databinding/Demo";
 // import HandleEvent from "./HandleEvent/HandleEvent";
 // import StyleComponent from "./StyleComponent/StyleComponent";
+// import StateDemo from "./StateDemo/StateDemo";
 
-import StateDemo from "./StateDemo/StateDemo";
+import BaiTapThuKinh from "./Components/BaiTapThuKinh/BaiTapThuKinh";
 
 function App() {
   // Nơi trả ra thẻ từ FILE trong folder Component
@@ -20,7 +21,8 @@ function App() {
       {/* <HandleEvent/> */}
       {/* <StyleComponent />
       <p className="fontBold">Ahihi</p> */}
-      <StateDemo/>
+      {/* <StateDemo/> */}
+      <BaiTapThuKinh />
     </div>
   );
 }

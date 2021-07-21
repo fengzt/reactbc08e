@@ -8,7 +8,17 @@
 // import StyleComponent from "./StyleComponent/StyleComponent";
 // import StateDemo from "./StateDemo/StateDemo";
 
-import BaiTapThuKinh from "./Components/BaiTapThuKinh/BaiTapThuKinh";
+import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
+
+// import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
+
+// import ShoesShop from "./Props/ShoesShop/ShoesShop";
+
+// import RenderWithMap from "./RenderWithMap/RenderWithMap";
+
+// import HomeLayout from "./Components/Props/DemoProps/HomeLayout";
+
+// import BaiTapThuKinh from "./Components/BaiTapThuKinh/BaiTapThuKinh";
 
 function App() {
   // Nơi trả ra thẻ từ FILE trong folder Component
@@ -22,7 +32,12 @@ function App() {
       {/* <StyleComponent />
       <p className="fontBold">Ahihi</p> */}
       {/* <StateDemo/> */}
-      <BaiTapThuKinh />
+      {/* <BaiTapThuKinh /> */}
+      {/* <HomeLayout /> */}
+      {/* <RenderWithMap /> */}
+      {/* <ShoesShop /> */}
+      {/* <BaiTapXemChiTiet/> */}
+      <ExerciseCarStore/>
     </div>
   );
 }

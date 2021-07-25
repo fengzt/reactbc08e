@@ -8,7 +8,9 @@
 // import StyleComponent from "./StyleComponent/StyleComponent";
 // import StateDemo from "./StateDemo/StateDemo";
 
-import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
+import ExerciseCart from "./Props/ExerciseCart/ExerciseCart";
+
+// import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
 
 // import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
 
@@ -37,7 +39,8 @@ function App() {
       {/* <RenderWithMap /> */}
       {/* <ShoesShop /> */}
       {/* <BaiTapXemChiTiet/> */}
-      <ExerciseCarStore/>
+      {/* <ExerciseCarStore/> */}
+      <ExerciseCart/>
     </div>
   );
 }

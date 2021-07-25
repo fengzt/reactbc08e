@@ -15,10 +15,10 @@ export default class ProductItem extends Component {
           <button
             className="btn btn-success"
             data-toggle="modal"
-                    data-target="#modelId"
-                    onClick={() => {
-                        viewDetail(item)
-                    }}
+            data-target="#modelId"
+            onClick={() => {
+              viewDetail(item);
+            }}
           >
             Xem chi tiết
           </button>

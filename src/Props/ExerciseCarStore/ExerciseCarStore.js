@@ -30,14 +30,26 @@ export default class ExerciseCarStore extends Component {
     },
   ];
 
-  state = {
-    productDetail: {
-      id: 1,
-      name: "black car",
-      img: "./img/CarBasic/products/black-car.jpg",
-      price: 1000,
-    },
-  };
+  // state = {
+  //   productDetail: {
+  //     id: 1,
+  //     name: "black car",
+  //     img: "./img/CarBasic/products/black-car.jpg",
+  //     price: 1000,
+  //   },
+  // };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      productDetail : {
+        id: 1,
+        name: "black car",
+        img: "./img/CarBasic/products/black-car.jpg",
+        price: 1000,
+      },
+    };
+  }
 
   //setState định nghĩa tại component chứa state
   // truyền props viewDetail từ ExerciseCarStore -> ProductList -> ProductItem (nơi có nút sự kiện)

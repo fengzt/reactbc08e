@@ -8,6 +8,7 @@
 // import StyleComponent from "./StyleComponent/StyleComponent";
 // import StateDemo from "./StateDemo/StateDemo";
 
+import BaiTapGioHang from "./DemoRedux/BaiTapGioHang/BaiTapGioHang";
 import ExerciseCart from "./Props/ExerciseCart/ExerciseCart";
 
 // import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
@@ -40,7 +41,8 @@ function App() {
       {/* <ShoesShop /> */}
       {/* <BaiTapXemChiTiet/> */}
       {/* <ExerciseCarStore/> */}
-      <ExerciseCart/>
+      {/* <ExerciseCart/> */}
+      <BaiTapGioHang />
     </div>
   );
 }

@@ -111,18 +111,18 @@ export default class ExerciseCart extends Component {
     });
   };
 
-  tangGiamSoLuong = (maSPClick, soLuong) => {
-    console.log(maSPClick, soLuong);
+  tangGiamSoLuong = (maSPClick, heSo) => {
+    console.log(maSPClick, heSo);
     let { gioHang } = this.state;
     let spTangGiam = gioHang.find((sp) => sp.maSP === maSPClick);
     if (spTangGiam) {
       // 2 + 1 = 3 => tăng
       // 2 + -1 = 1 => giảm
-      spTangGiam.soLuong += soLuong;
+      spTangGiam.soLuong += heSo;
       if (spTangGiam.soLuong < 1) {
         alert("Số lượng tối thiểu là 1!");
         // 0 - - 1 = 1
-        spTangGiam.soLuong -= soLuong;
+        spTangGiam.soLuong -= heSo;
       }
     }
     this.setState({

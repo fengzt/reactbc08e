@@ -15,13 +15,6 @@ export default class ProductListCart extends Component {
   //     });
   //   };
 
-  tinhTongTien = () => {
-    let { gioHang } = this.state;
-    let tongTien = gioHang.reduce((thanhTien, sanPham, index) => {
-      return (thanhTien += sanPham.soLuong * sanPham.giaBan);
-    }, 0);
-    return tongTien.toLocaleString();
-  };
 
   render() {
     let { mangSanPham, themGioHang } = this.props;

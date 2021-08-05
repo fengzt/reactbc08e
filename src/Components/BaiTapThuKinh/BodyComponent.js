@@ -109,7 +109,7 @@ export default class BodyComponent extends Component {
         <img
           src="./img/glassesImage/background.jpg"
           style={{
-            position: "absolute",
+            position: "fixed",
             width: "100%",
             height: "100%",
             zIndex: "1",

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import DanhSachSanPham from "./DanhSachSanPham";
 import GioHang from "./GioHang";
+import { connect } from "react-redux";
 
-export default class BaiTapGioHang extends Component {
+class BaiTapGioHang extends Component {
   dataPhone = [
     {
       maSP: 1,
@@ -41,6 +42,20 @@ export default class BaiTapGioHang extends Component {
       hinhAnh: "./img/applephone.jpg",
     },
   ];
+  tinhTongSL = () => {
+    let { gioHang } = this.props;
+    let tongSoLuong = gioHang.reduce((tongSL, sp, index) => {
+      return tongSL += sp.soLuong 
+    }, 0)
+    return tongSoLuong;
+  }
+  tinhTongTien = () => {
+    let { gioHang } = this.props;
+    let tongTien = gioHang.reduce((tinhTien, sp, index) => {
+      return (tinhTien += (sp.soLuong * sp.giaBan)) 
+    }, 0)
+    return tongTien.toLocaleString();
+  }
   render() {
     return (
       <div className="container">
@@ -52,7 +67,7 @@ export default class BaiTapGioHang extends Component {
             data-toggle="modal"
             data-target="#modelId"
           >
-            Giỏ hàng (0)
+            Giỏ hàng ({this.tinhTongSL()} - {this.tinhTongTien()})
           </span>
         </div>
         <GioHang />
@@ -61,3 +76,11 @@ export default class BaiTapGioHang extends Component {
     );
   }
 }
+
+const mapStateToProps = (rootReducer) => {
+  return {
+    gioHang: rootReducer.gioHangReducer,
+  }
+}
+
+export default connect(mapStateToProps)(BaiTapGioHang);

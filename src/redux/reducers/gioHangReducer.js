@@ -46,10 +46,10 @@ export const gioHangReducer = (state = gioHang, action) => {
 
           let spGH = gioHangCapNhat.find(sp => sp.maSP === action.maSPClick);
           if (spGH) {
-              spGH.soLuong += action.soLuong;
+              spGH.soLuong += action.heSo;
               if (spGH.soLuong < 1) {
                   alert('Số lượng tối thiểu bằng 1');
-                  spGH.soLuong -= action.soLuong;
+                  spGH.soLuong -= action.heSo;
             }
           }
           // Đã tách ra ô nhớ mới ở gioHangCapNhat dòng 45, tách tiếp dòng này cho chắc ăn thêm 101% không bị báo lỗi redux

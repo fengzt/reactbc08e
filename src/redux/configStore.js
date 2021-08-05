@@ -1,5 +1,9 @@
 import { combineReducers, createStore } from "redux";
 import { gioHangReducer } from "./reducers/gioHangReducer";
+// export const thì phải có 2 dấu {} và trỏ đúng tên
+// export default thì không cần 2 dấu {}, và có thể đặt tên bất kì, miễn đúng đường dẫn
+import { baiTapGameXucXacReducer } from "./reducers/baiTapGameXucXacReducer";
+import { baiTapQuanLyNguoiDungReducer } from "./reducers/baiTapQuanLyNguoiDungReducer"
 
 const gioHang = [
   //   {
@@ -17,43 +21,7 @@ const rootReducer = combineReducers({
   // Giá trị ban đầu là mảng gioHang
   // Chứa hàm để tạo nên state, chứ không chứa state
   // gọi gioHangReducer đúng trong mapStateToProps ở GioHang.js
-    gioHangReducer: gioHangReducer,
-//   gioHangReducer: (state = gioHang, action) => {
-//     // console.log(action)
-//     // All state sẽ cùng chạy, phân biệt dựa vào type
-//     switch (action.type) {
-//       case "XOA_GIO_HANG": {
-//         const gioHangCapNhat = state.filter((sp) => sp.maSP !== action.maSPClick);
-//         return [...gioHangCapNhat];
-//       }
-//       case "THEM_GIO_HANG": {
-//         // Dựa vào sanPhamClick để tạo đối tượng spGH mới có thêm thuộc tính soLuong
-//         const spGH = { ...action.sanPhamClick, soLuong: 1 };
-//         // kiểm tra sản phẩm có trong giỏ hàng chưa
-
-//         let gioHangCapNhat = state; // đặt lại tên biến
-//         let spGioHang = gioHangCapNhat.find((sp) => sp.maSP === spGH.maSP);
-//         // Có tồn tại trong giỏ hàng
-//         if (spGioHang) {
-//           spGioHang.soLuong += 1;
-//         } else {
-//           // Không tồn tại
-//           gioHangCapNhat.push(spGH);
-//         }
-
-//         console.log("gioHangCapNhat", gioHangCapNhat);
-//         // imutable: tính bất biến object phải trả về object mới, arr phải về arr mới => sao chép ra vùng mới
-//         // imutable là tính chất của redux. Redux chỉ nhận ra sự thay đổi của arr, object thông qua địa chỉ mới. Khi đó mới chạy reducer
-//         return [...gioHangCapNhat];
-//         // trả về state mới (lưu ý: kiểu dữ liệu state trả về phải giống với state cũ)
-//       }
-//       // Nếu bị báo lỗi thì đổi return state vào trong switch
-//       // Vì switch phải có default : xử lý các trường hợp khác ngoài case
-//       default:
-//         return state;
-//     }
-//     // return state;
-//   },
+  gioHangReducer: gioHangReducer,
 
   // reducerB: ( state='', action )=> {
   // console.log(action)
@@ -65,6 +33,12 @@ const rootReducer = combineReducers({
 
   // return state;
   // }
+  baiTapGameXucXacReducer,
+  baiTapQuanLyNguoiDungReducer,
 });
 
-export const store = createStore(rootReducer);
+export const store = createStore(
+  rootReducer,
+  // github.com/zalmoxisus/redux-devtools-extension#installation -> 1.1 Basic store//
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);

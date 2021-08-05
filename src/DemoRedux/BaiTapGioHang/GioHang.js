@@ -17,13 +17,14 @@ class GioHang extends Component {
             <button
               className="btn btn-outline-primary mr-2"
               onClick={() => {
-                const action = {
-                  type: "TANG_GIAM_SO_LUONG",
-                  maSPClick: spGH.maSP,
-                  soLuong: 1,
-                };
-                //Gọi hàm dispatch gửi dữ liệu lên redux
-                this.props.dispatch(action);
+                // const action = {
+                //   type: "TANG_GIAM_SO_LUONG",
+                //   maSPClick: spGH.maSP,
+                //   heSo: 1,
+                // };
+                // //Gọi hàm dispatch gửi dữ liệu lên redux
+                // this.props.dispatch(action);
+                this.props.tangGiamSoLuong(spGH.maSP,1)
               }}
             >
               +
@@ -32,13 +33,14 @@ class GioHang extends Component {
             <button
               className="btn btn-outline-primary mr-2"
               onClick={() => {
-                const action = {
-                  type: "TANG_GIAM_SO_LUONG",
-                  maSPClick: spGH.maSP,
-                  soLuong: -1,
-                };
-                //Gọi hàm dispatch gửi dữ liệu lên redux
-                this.props.dispatch(action);
+                // const action = {
+                //   type: "TANG_GIAM_SO_LUONG",
+                //   maSPClick: spGH.maSP,
+                //   heSo: -1,
+                // };
+                // //Gọi hàm dispatch gửi dữ liệu lên redux
+                // this.props.dispatch(action);
+                this.props.tangGiamSoLuong(spGH.maSP,-1)
               }}
             >
               -
@@ -56,8 +58,8 @@ class GioHang extends Component {
                 //   type: "XOA_GIO_HANG",
                 //   maSPClick: spGH.maSP,
                 // };
-                // Dùng hàm this.props.dispatch từ redux để gửi dữ liệu về redux (reducer)
-                // Hay dispatch redux
+                // // Dùng hàm this.props.dispatch từ redux để gửi dữ liệu về redux (reducer)
+                // // Hay dispatch redux
                 // this.props.dispatch(action);
                 this.props.xoaGioHang(spGH.maSP);
               }}
@@ -150,6 +152,14 @@ const mapDispatchToProps = (dispatch) => {
       };
       dispatch(action);
     },
+    tangGiamSoLuong: (maSPClick, heSo) => {
+      const action = {
+        type: "TANG_GIAM_SO_LUONG",
+        maSPClick: maSPClick,
+        heSo
+      };
+      dispatch(action);
+    },    
   };
 };
 
@@ -169,7 +179,7 @@ const mapStateToProps = (rootReducer) => {
   };
 };
 
-// kết hợp component GioHang với redux - HOC (buổi 10)
+// kết hợp component GioHang với redux - Gọi là HOC (buổi 10 học)
 // Hàm lồng hàm: a(1)(2): a()=>{blabla return function(){}}
 // biến 1 để chạy blabla => có kết quả chạy vào hàm function trong return cùng với biến 2
 // const ComponentGioHangRedux = connect(mapStateToProps)(GioHang);

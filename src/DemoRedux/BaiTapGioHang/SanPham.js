@@ -32,4 +32,5 @@ class SanPham extends Component {
 }
 
 // Kết nối redux => clg sinh ra dispatch
+// Vì không lấy dữ liệu trên redux nên không dùng mapStateToProps
 export default connect()(SanPham);

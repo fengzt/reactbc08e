@@ -32,15 +32,25 @@ class TableDanhSachNguoiDung extends Component {
                 <td>{nguoiDung.soDienThoai}</td>
                 <td>{nguoiDung.maLoaiNguoiDung}</td>
                 <td>
-                        <button className="btn btn-outline-danger mr-2" onClick={() => {
-                            const action = {
-                                type: 'XOA_NGUOI_DUNG',
-                                taiKhoan: nguoiDung.taiKhoan
-                            }
-
-                            this.props.dispatch(action)
-                  }}>Xóa</button>
-                  <button className="btn btn-outline-primary">Chỉnh sửa</button>
+                  <button
+                    className="btn btn-outline-danger mr-2"
+                    onClick={() => {
+                      const action = {
+                        type: "XOA_NGUOI_DUNG",
+                        taiKhoan: nguoiDung.taiKhoan,
+                      };
+                      this.props.dispatch(action);
+                    }}
+                  >
+                    Xóa
+                  </button>
+                  <button onClick={() => {
+                    const action = {
+                      type: "CHINH_SUA",
+                      nguoiDungChinhSua: nguoiDung,
+                    }
+                    this.props.dispatch(action);
+                  }} className="btn btn-outline-primary">Chỉnh sửa</button>
                 </td>
               </tr>
             ))}
@@ -56,17 +66,19 @@ class TableDanhSachNguoiDung extends Component {
 // state chính là rootReducer
 const mapStateToProps = (state) => ({
   mangNguoiDung: state.baiTapQuanLyNguoiDungReducer.mangNguoiDung,
+  nguoiDung: state.baiTapQuanLyNguoiDungReducer.nguoiDung,
 });
 
 // const mapStateToDispatch = (dispatch) => {
 //     return {
 //         xoaNguoiDung: (tk) => {
+//            const action = {
 //             type:"XOA_NGUOI_DUNG"
 //         }
+//        }
 //     }
 // }
 
 export default connect(mapStateToProps)(TableDanhSachNguoiDung);
-
 
 // Xem login 65 - 78

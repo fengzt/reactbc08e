@@ -229,7 +229,9 @@ class FormDangKy extends Component {
           <button className="btn btn-outline-success mt-2" type="submit">
             Đăng Kí
           </button>
-          <button
+          
+          {/* Phải có type="button", để ngăn submit chạy, phân biệt với type="submit" ở nút Đăng kí */}
+          <button type="button"
             onClick={() => {
               // Cập nhật dữ liệu
               const action = {

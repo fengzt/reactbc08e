@@ -95,7 +95,7 @@ class FormDangKy extends Component {
   handleSubmit = (event) => {
     // Cản sự kiện submit browser => cản load lại trang khi submit
     event.preventDefault();
-    console.log("state", this.state);
+    // console.log("state", this.state);
 
     // Bắt trường hợp lỗi => không cho submit
     let valid = true;
@@ -115,7 +115,7 @@ class FormDangKy extends Component {
         break;
       }
     }
-    console.log(valid);
+    // console.log(valid);
     if (!valid) {
       alert("Dữ liệu không hợp lệ");
       return;
@@ -151,7 +151,7 @@ class FormDangKy extends Component {
                   className="form-control"
                   name="taiKhoan"
                   // Dùng onBlur, vừa rời input sẽ bắt sự kiện ngay, khác với onChange, thay đổi mới bắt sự kiện
-                  onBlur={this.handleChangeInput}
+                  onChange={this.handleChangeInput}
                   //   onBlur={(e) => {console.log(e.target)}}
                 />
                 <p style={{ color: "red" }}>

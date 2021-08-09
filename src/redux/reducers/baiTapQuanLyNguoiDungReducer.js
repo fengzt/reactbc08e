@@ -45,15 +45,27 @@ const stateDefault = {
       maLoaiNguoiDung: "",
     },
   },
-  nguoiDungCapNhat: {},
+  // nguoiDungCapNhat: {},
 };
 
 export const baiTapQuanLyNguoiDungReducer = (state = stateDefault, action) => {
   // console.log("action", action);
   switch (action.type) {
     case "THEM_NGUOI_DUNG": {
-      state.mangNguoiDung = [...state.mangNguoiDung, action.nguoiDung];
+      if (
+        state.mangNguoiDung.find(
+          (nguoiDung) => nguoiDung.taiKhoan === action.nguoiDung.taiKhoan
+        )
+      ) {
+        alert("Người dùng đã tồn tại");
+      } else {
+        state.mangNguoiDung = [...state.mangNguoiDung, action.nguoiDung];
+      }
+
+        // state.mangNguoiDung = [...state.mangNguoiDung, action.nguoiDung];
+      
       // state.mangNguoiDung.push(action.nguoiDung)
+
 
       return { ...state };
     }
@@ -75,7 +87,7 @@ export const baiTapQuanLyNguoiDungReducer = (state = stateDefault, action) => {
       return { ...state };
     }
     case "CAP_NHAT_NGUOI_DUNG": {
-      console.log(action.nguoiDungCapNhat)
+      // console.log('nguoiDungCapNhat',action.nguoiDungCapNhat)
       const mangNguoiDungCapNhat = [...state.mangNguoiDung];
 
       // Tìm ra người dùng cần cập nhật
@@ -102,8 +114,9 @@ export const baiTapQuanLyNguoiDungReducer = (state = stateDefault, action) => {
       if (index !== -1) {
         mangNguoiDungCapNhat[index] = action.nguoiDungCapNhat;
       }
-
+      // console.log("mangNguoiDungCapNhat", mangNguoiDungCapNhat);
       state.mangNguoiDung = mangNguoiDungCapNhat;
+      console.log("state.mangNguoiDung", state.mangNguoiDung);
       return { ...state };
     }
     default:

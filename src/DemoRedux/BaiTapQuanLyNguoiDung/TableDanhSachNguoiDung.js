@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 class TableDanhSachNguoiDung extends Component {
   render() {
+    console.log("this.props.mangNguoiDung", this.props.mangNguoiDung);
     return (
       <div className="card mt-3">
         <div className="card-header bg-dark text-white">
@@ -66,7 +67,7 @@ class TableDanhSachNguoiDung extends Component {
 // state chính là rootReducer
 const mapStateToProps = (state) => ({
   mangNguoiDung: state.baiTapQuanLyNguoiDungReducer.mangNguoiDung,
-  nguoiDung: state.baiTapQuanLyNguoiDungReducer.nguoiDung,
+  // nguoiDung: state.baiTapQuanLyNguoiDungReducer.nguoiDung,
 });
 
 // const mapStateToDispatch = (dispatch) => {
@@ -79,6 +80,7 @@ const mapStateToProps = (state) => ({
 //     }
 // }
 
+// Xem login 65 - 78
 export default connect(mapStateToProps)(TableDanhSachNguoiDung);
 
-// Xem login 65 - 78
+
